@@ -1,0 +1,7 @@
+[user]
+	email = s4malve@gmail.com
+	name = s4malve
+[core]
+	editor = nvim
+[init]
+	defaultBranch = master
