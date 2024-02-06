@@ -1,0 +1,151 @@
+@define-color dark #0f0f0f;
+@define-color light rgb(240,240,240);
+@define-color gray rgba(255,255,255, 0.6);
+@define-color darkBlue #1e1e2e;
+@define-color yellow #fab387;
+@define-color red rgb(255, 104, 104);
+@define-color lilac rgb(203, 166, 247);
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: mononoki Nerd Font;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @light;
+}
+
+tooltip {
+	background: @dark;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #262626;
+}
+
+/* ---------- BORDER RADIUS ---------- */
+tooltip, 
+.modules-center,
+.modules-right,
+#workspaces,
+#window,
+#custom-notification {
+	border-radius: 8px;
+}
+/* ---------- BACKGROUND ---------- */
+.modules-center, .modules-right, #workspaces, #window {
+	background: @darkBlue;
+}
+
+/* ---------- MARGIN TOP ---------- */
+.modules-center, .modules-left, .modules-right {
+	margin-top: 10px;
+}
+
+/* ---------- PADDDING ---------- */
+.modules-center, .modules-right {
+	padding: 0 6px 0 6px;
+}
+
+.modules-left {
+	margin-left: 5px;
+}
+
+.modules-center {
+	margin-left: 20px;
+	margin-right: 20px;
+	font-weight: bold;
+}
+
+.modules-right {
+	margin-right: 5px;
+}
+
+#workspaces button {
+    padding: 5px 5px;
+    color: @gray;
+}
+
+#workspaces button:hover {
+	background: transparent;
+}
+
+#workspaces button.active {
+	font-weight: bold;
+	color: @light;
+}
+
+#workspaces, 
+#custom-date, 
+#custom-powermenu, 
+#custom-bluetooth,
+#custom-lock_screen,
+#custom-power_btn,
+#custom-power_profile,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#battery,
+#backlight,
+#pulseaudio,
+#cpu,
+#memory,
+#disk,
+#window,
+#bluetooth {
+	padding: 6px 12px;
+}
+
+#window {
+    margin-left: 12px;
+    font-weight: bold;
+}
+
+#custom-notification {
+	background-color: #f38ba8;
+	margin-right: 20px;
+	color: @dark;
+}
+
+#custom-date {
+	color: #9ec3c4;
+}
+
+#custom-powermenu {
+	color: #f38ba8;
+	margin-right: 20px;
+}
+
+#clock {
+    color: @lilac; 
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.charging {
+    color: #89dceb;
+}
+
+#battery.warning:not(.charging) {
+    background-color: @yellow;
+    color: @dark;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @dark;
+}
+
+#network {
+	color: #f9e2af;
+}
+
+#pulseaudio {
+	color: #89b4fa;
+}
