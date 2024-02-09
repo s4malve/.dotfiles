@@ -101,7 +101,7 @@
     },
 
     "clock": {
-      "format": "  {:%A, %B %e %Y   %r}",
+      "format": " {:%A, %B %e %Y    %r}",
       "tooltip-format": "<tt><small>{calendar}</small></tt>",
       "calendar": {
         "mode"          : "year",
