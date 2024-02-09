@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swayidle -w timeout 1 'swaylock -f' timeout 60 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock - f'",
+    "action" : "sleep 2 && wlogout -f && sleep 120 && systemctl suspend",
     "text" : "Lock"
 }
 
