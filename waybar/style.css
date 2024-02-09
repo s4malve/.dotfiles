@@ -124,14 +124,6 @@ tooltip,
     color: @lilac; 
 }
 
-#battery {
-    color: #a6e3a1;
-}
-
-#battery.charging {
-    color: #89dceb;
-}
-
 #battery.warning:not(.charging) {
     background-color: @yellow;
     color: @dark;
@@ -142,10 +134,18 @@ tooltip,
     color: @dark;
 }
 
+/* 
+#battery.charging {
+    color: #89dceb;
+}
+#battery {
+  color: #a6e3a1;
+}
 #network {
-	color: #f9e2af;
+  color: #f9e2af;
 }
 
 #pulseaudio {
-	color: #89b4fa;
+  color: #89b4fa;
 }
+ */
