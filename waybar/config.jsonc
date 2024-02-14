@@ -14,7 +14,7 @@
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{icon} {signalStrength}%",
+        "format-wifi": "{icon}  {signalStrength}%",
         "format-ethernet": "{ipaddr}/{cidr}",
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "tooltip-format": "{essid} - {ifname} via {gwaddr}",
@@ -41,7 +41,7 @@
 
     "cpu": {
         "interval": 10,
-        "format": " {usage}%",
+        "format": "  {usage}%",
         "max-length": 10,
         "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
     },
@@ -57,7 +57,7 @@
 
     "memory": {
         "interval": 30,
-        "format": " {}%",
+        "format": "  {}%",
         "max-length": 10,
         "tooltip": true,
         "tooltip-format": "Memory - {used:0.1f}GB used",
@@ -101,7 +101,7 @@
     },
 
     "clock": {
-      "format": " {:%A, %B %e %Y    %r}",
+      "format": "  {:%A, %B %e %Y    %r}",
       "tooltip-format": "<tt><small>{calendar}</small></tt>",
       "calendar": {
         "mode"          : "year",
@@ -128,7 +128,7 @@
 
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon} {percent}%",
+        "format": "{icon}  {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃠"],
         "on-scroll-up": "brillo -q -A 1",
         "on-scroll-down": "brillo -q -U 1",
@@ -141,15 +141,15 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{time}  {icon}",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "format-muted": "",
         "on-click": "pamixer -t",
         "on-click-right": "pavucontrol",
