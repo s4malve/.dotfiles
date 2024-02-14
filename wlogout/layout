@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "sleep 2 && wlogout -f && sleep 120 && systemctl suspend",
+    "action" : "sleep 1 && swaylock",
     "text" : "Lock"
 }
 
