@@ -1,0 +1,10 @@
+[window]
+opacity = 0.9
+blur = true
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+[font.italic]
+family = "JetBrainsMono Nerd Font"
