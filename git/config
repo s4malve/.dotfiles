@@ -1,0 +1,11 @@
+[core]
+	editor=nvim
+[color]
+	status=auto
+	branch=auto
+	interactive=auto
+	diff=auto
+
+[user]
+	name = s4malve
+	email = 42875378+s4malve@users.noreply.github.com
