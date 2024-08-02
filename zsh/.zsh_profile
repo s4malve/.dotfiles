@@ -1,0 +1,10 @@
+bindkey -e
+bindkey -s "^f" "tmux-sessionizer^M"
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^ ' autosuggest-accept
+
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  exec startx
+fi
+
