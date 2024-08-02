@@ -26,7 +26,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light Aloxaf/fzf-tab
 
 # Load autocompletitions
-autoload -U compinit && compinit
+autoload -U compinit && compinit -d $ZSH_CACHE_DIR
 
 HISTSIZE=5000
 HISTFILE=~/.zsh_history

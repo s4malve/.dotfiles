@@ -4,6 +4,10 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^ ' autosuggest-accept
 
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
+ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
+
+
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
 fi
