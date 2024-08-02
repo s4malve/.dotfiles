@@ -1,5 +1,6 @@
 .stowrc
 .DS_Store
+setup.sh
 
 RCS
 .+,v
