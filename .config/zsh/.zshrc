@@ -11,8 +11,12 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export GOPATH=$HOME/.local/go
-export PATH=$PATH:$GOPATH/bin:$HOME/.turso/
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/.turso/
+export PATH="$PATH:/home/s4malve/.turso"
+export PATH=$HOME/.local/bin:$PATH
 export NODEJS_HOME=/usr/lib/nodejs/node
+export EDITOR=nvim
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"

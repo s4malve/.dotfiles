@@ -36,6 +36,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+		vim.keymap.set("n", "<leader>lm", function()
+			vim.ui.input({ prompt = "Workspace symbols: " }, function(query)
+				builtin.lsp_workspace_symbols({ query = query })
+			end)
+		end, {})
 
 		-- Slightly advanced example of overriding default behavior and theme
 		vim.keymap.set("n", "<leader>/", function()

@@ -100,7 +100,6 @@ return { -- LSP Configuration & Plugins
 		local servers = {
 			-- clangd = {},
 			yamlls = {},
-			tsserver = {},
 			bashls = {},
 			tailwindcss = {},
 			prettierd = {},
