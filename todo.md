@@ -1,0 +1,39 @@
+Applications: 
+- [ ] Terminal ????
+- [X] Code editor (nvim)
+- [ ] Shell
+    - [ ] zoxide
+    - [ ] fzf
+    - [ ] autocomplete
+    - [ ] history
+- [X] Browsers (zen, brave)
+- [ ] Screenshots
+- [ ] Tokei (file table summary)
+- [ ] Slides in the terminal
+
+Config:
+- [X] Autostart hyprland
+- [X] Fix monitor res
+- [X] AUR package manager (paru / yay)
+- [X] Numlock activation
+- [X] Display server (wayland)
+- [X] Window compositor (hyprland)
+- [X] User directories (xdg-user-dirs)
+- [ ] Power management
+- [ ] ACPI events (power button / close laptop)
+- [ ] Asus laptop config
+- [ ] Suspend and hybernate
+- [ ] Multimedia
+- [ ] DNS
+- [X] Firewall
+- [ ] Printing
+- [ ] GTK and QT Themes
+- [ ] Config nvim
+- [X] Config fonts (with font icons and emojis)
+- [ ] Setup home rows
+- [X] Pull pwd from github
+- [ ] Yellow light
+- [ ] Enable notifications:
+    - [ ] Low baterry notifications
+- [ ] Setup wallpapers
+- [ ] Clean up script (arch, pacman, and other cache stuff)
