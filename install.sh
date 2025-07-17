@@ -214,7 +214,7 @@ setup_hyprland_autostart() {
             ;;
     esac
 
-    local autostart_content='if uwsm check may-start >/dev/null 2>&1 && uwsm select; then
+    local autostart_content='if uwsm check may-start; then
     exec uwsm start hyprland-uwsm.desktop
 fi'
 
@@ -307,7 +307,73 @@ setup_passwords() {
     fi
 }
 
-# --- Main Script Execution ---
+setup_dotfiles() {
+    printf "\n--- Setting up dotfiles ---\n"
+    if ! prompt_for_yes_no "Setup dotfiles"; then
+        echo "Avoiding dotfiles setup."
+        return 0
+    fi
+    
+    sudo pacman -S ${PKG_INSTALL_FLAGS} stow
+
+    printf "\n--- DANGER ---\nThe following operation will delete the following files:"
+    stow_config="--target=~"
+    stow -n -v .
+    if ! prompt_for_yes_no "Do you want to delete conflict files"; then
+        echo "Exiting dofiles setup, none of the files where edited or deleted."
+        return 0
+    fi
+
+}
+
+setup_wallpapers() {
+    printf "\n--- Setting up wallpapers ---\n"
+    if ! prompt_for_yes_no "Setup wallpapers"; then
+        echo "Avoiding wallpapers setup."
+        return 0
+    fi
+    target_dir="/usr/local/bin"
+    wallpaper_folder="$HOME/.wallpapers"
+    SCRIPTS_FOLDER="scripts"
+    random_wallpaper_script="random-wallpaper.sh"
+    if [[ ! -d "$wallpaper_folder" ]]; then
+	git clone git@github.com:s4malve/.wallpapers.git "$wallpaper_folder"
+    fi
+
+    sudo pacman -S ${PKG_INSTALL_FLAGS} hyprpaper
+    systemctl --user enable --now hyprpaper
+
+
+    stow --target="$HOME/.config/" -S hyprpaper
+    sudo stow --target="$target_dir" -S "$SCRIPTS_FOLDER"
+    sudo chmod +x "$target_dir/$random_wallpaper_script"
+    "$random_wallpaper_script"
+}
+
+setup_status_bar() {
+    printf "\n--- Setting up status bar ---\n"
+    if ! prompt_for_yes_no "Setup status bar"; then
+        echo "Avoiding status bar setup."
+        return 0
+    fi
+    sudo pacman -S ${PKG_INSTALL_FLAGS} waybar
+    stow --target="$HOME/.config/" -S waybar
+    systemctl --user enable --now waybar.service
+}
+
+aur_install() {
+    "$aur" -S ${PKG_INSTALL_FLAGS} ${@}
+}
+
+setup_desktop_shell() {
+    printf "\n--- Setting up Desktop Shell ---\n"
+    if ! prompt_for_yes_no "Setup desktop shell"; then
+        echo "Avoiding desktop shell setup."
+        return 0
+    fi
+    aur_install quickshell-git
+
+}
 
 main() {
     echo "Starting Hyprland Arch Linux Post-Install Script..."
@@ -323,6 +389,10 @@ main() {
     setup_asus_support
     setup_ssh_key
     setup_passwords
+    # setup_dotfiles
+    setup_wallpapers
+    setup_status_bar
+    setup_desktop_shell
 
     echo "Script execution complete!"
     echo "Please consider rebooting your system for all changes to take effect."

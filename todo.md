@@ -1,7 +1,11 @@
 Applications: 
 - [ ] Terminal ????
+- [ ] Status bar
+- [ ] App launcher
+- [ ] 
 - [X] Code editor (nvim)
 - [ ] Shell
+    - [ ] aliases
     - [ ] zoxide
     - [ ] fzf
     - [ ] autocomplete
